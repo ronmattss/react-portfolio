@@ -1,0 +1,89 @@
+[
+  {
+    "Title": "Melee Combat System",
+    "Link": "https://github.com/ronmattss/HackSlash",
+    "Tools": "Custom Made Melee Combat System",
+    "Description": "A prototype of a Melee Combat System where it can handle any type of weapon.",
+    "Image": "img/HackSlash.png"
+  },
+  {
+    "Title": "Matrix Path",
+    "Link": "https://github.com/ronmattss/WFC-Puzzle",
+    "Tools": "Wave Function Collapse Algorithm, Self Avoiding Walk Algorithm, Fuzzy Logic",
+    "Description": "A Procedural Path-building Puzzle game where you uncover paths to the exit, uses WFC to generate levels, and Fuzzy Logic to control how hard a level will be",
+    "Image": "img/MatrixPath.png"
+  },  
+  {
+    "Title": "Grappler",
+    "Link": "https://github.com/ronmattss/HackSlash",
+    "Tools": "Unity Physics 2D",
+    "Description": "A grappling hook base platformer prototype I made to see if I can replicate grappling hook mechanics in 2D",
+    "Image": "img/Grappler.png"
+  },
+
+  {
+    "Title": "Missile Evade",
+    "Link": "https://github.com/ronmattss/Planes",
+    "Tools": "Spawn system, Missile Tracking system, top-down plane controls, Purchase system, In-app purchase (test system)",
+    "Description": "A hyper-casual game where you evade missiles. ",
+
+    "Image": "img/Missile_Evade.png"
+  },
+  {
+    "Title": "Personal Academic Tracker",
+    "Link": "https://github.com/ronmattss/Personal-Academic-Tracker-PAT",
+    "Tools": "Flutter, Mysql",
+    "Description": "A flutter application that tracks your academic tasks, this app is used for our DBMS final output, using MySql as backend for this simple app",
+    "Image": "img/PAT.png"
+  },
+  {
+    "Title": "Spirit Guardian",
+    "Link": "https://github.com/ronmattss/SideScrollerProject",
+    "Tools": "2D Melee Combat System,Character Movement, Spell System, Dialogue System,Animations , Cinemachine, State Machine AI, Aseprite",
+    "Description": "Spirit Guardian is a 2D Action-Adventure prototype with the theme of aswang belief of the Philippines",
+    "Image": "img/Weap.jpg"
+  },
+  {
+    "Title": "Simple Mario Style Side Scroller",
+    "Link": "https://github.com/ronmattss/2d-Platformer",
+    "Tools": "Unity, Aseprite, Unity 2D Tilemap",
+    "Description": "A classic side scroller made for a client. Features a shoot mechanic and a slippery controls to add difficulty on this classic style game.",
+    "Image": "img/2D Platformer.png"
+  },
+  {
+    "Title": "Pixel Art to Unity Tilemap Level Generator",
+    "Link": "https://github.com/ronmattss/PixelToLevelGenerator",
+    "Tools": " Unity editor, Aseprite, Unity 2D Tilemap",
+    "Description": "This project aims to create a tilemap based levels using images created in a sprite editor. Pixels are mapped to a certain tile in the engine to create rooms.",
+    "Image": "img/PixelToLevel.png"
+  },
+  {
+    "Title": "Cellular Automata",
+    "Link": "https://github.com/ronmattss/Cellular-Automata",
+    "Tools": ".net console app",
+    "Description": "Cellular automata simulation",
+    "Image": "img/SS2.jpg"
+  },
+  {
+    "Title": "PUP Navigation Map",
+    "Link": "https://github.com/ronmattss/PUP-Main-Navigation-Map",
+    "Tools": "A* pathfinding algorithm",
+    "Description": "A navigation map that uses A* pathfinding algorithm to check paths between two points, features the Main building of PUP",
+    "Image": "img/SS3.jpg"
+  },
+
+  {
+    "Title": "Mobile Student Portal",
+    "Link": "https://github.com/ronmattss/Flutter/tree/master/project_prototype/student_information_system",
+    "Tools": "Flutter",
+    "Description": "The final output for our OOP class, this is a mix of Flutter and Native Android (Java). The UI is made in Flutter while the SQL Database is made in Java, using Platform Channel to Bridge Flutter code and Native code.",
+    "Image": "img/SS5.jpg"
+  },
+  {
+    "Title": "Top-Down Shooter Prototype",
+    "Link": "https://github.com/ronmattss/Random_Mechanic_Scripts/tree/master/Scripts%20top_down",
+    "Tools": "An algorithm for targeting moving objects",
+    "Description": "A prototype of a shooter that utilizes A* algorithm for path finding and an advance targeting system for the enemies",
+    "Image": "img/SS4.jpg"
+  }
+]
