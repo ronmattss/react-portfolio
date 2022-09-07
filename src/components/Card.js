@@ -32,7 +32,7 @@ const Card = ({ field, fieldExpertize }) => {
     }
 
     return (
-        <div className="m-4 text-start bg-custom-navy-sky h-auto w-96 rounded-lg shadow-md transition ease-in-out hover:scale-110">
+        <div className="m-4 text-start bg-custom-navy-sky h-auto w-96 rounded-lg shadow-md">
             {/* Icon and Tech name */}
             <div className="">
                 <IconContext.Provider value={{ className: "shared-class", size: 50 }}>
