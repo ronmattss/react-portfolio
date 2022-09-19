@@ -8,7 +8,7 @@ const Landing = () => {
                     <div className="flex justify-center  grid-rows-2 items-center w-auto {bg-slate-800}">
                         <div className="w-max h-max lg:w-1/2 md:h-auto">
                             <div>
-                                <h2 className="text-center text-custom-navy-sky text-4xl lg:text-7xl lg:text-center md:w-auto ">HI, I'M RON A GRADUATING COMPUTER SCIENCE STUDENT</h2>
+                                <h2 className="text-center text-custom-navy-sky text-4xl lg:text-7xl lg:text-center md:w-auto ">HI, I'M RON A FRESH GRADUATE IN COMPUTER SCIENCE</h2>
                                 <p class="text-custom-navy-sky my-3 text-center lg:text-center">Game Developer | Software Developer | Full-Stack Developer | Mobile App Developer</p>
                             </div>
                             <div className=" grid grid-rows-2 h-auto">
