@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { GetLatestApod } from "../Apod";
+import React, { useRef } from "react";
 import Card from "../components/Card";
 import ContactForm from "../components/ContactForm";
 import Features from "../components/Features";
@@ -32,7 +31,7 @@ import ShortDescription from "../components/ShortDescription";
  */
 
 const Home = () => {
-    const [apod, setApod] = useState(null);
+    // const [apod, setApod] = useState(null);
     const home = useRef(null);
     const fields = useRef(null);
     const project = useRef(null);
@@ -45,13 +44,13 @@ const Home = () => {
         });
     };
 
-    async function setUpApod() {
-        let apodObject = null;
-        apodObject =  await GetLatestApod();
-        setApod(apodObject);
-    }
+    // async function setUpApod() {
+    //     let apodObject = null;
+    //     apodObject =  await GetLatestApod();
+    //     setApod(apodObject);
+    // }
 
-    useEffect(() => { setUpApod() }, [])
+    // useEffect(() => { setUpApod() }, [])
 
 
     const projects = [
@@ -103,11 +102,11 @@ const Home = () => {
                     ))
                 }
             </div>
-            <div className=" grid grid-cols-1 justify-items-center xl:grid-cols-3 2xl:mx-80">
+            {/* <div className=" grid grid-cols-1 justify-items-center xl:grid-cols-3 2xl:mx-80">
                 {
                     apod == null ? <div></div> : <Features projectImage={apod.hdurl} projectTitle={apod.title} projectDescription={apod.explanation} />
                 }
-            </div>
+            </div> */}
             <div ref={contact}></div>
             <ContactForm />
             <Footer home={() => { scrollDown(home) }} />
