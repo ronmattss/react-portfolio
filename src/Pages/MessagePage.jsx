@@ -20,14 +20,12 @@ const MessagePage = () => {
         setState("Finding Message")
         const userRequest = await fetch(`https://basicmessageapi.azurewebsites.net/api/Message/byCode?code=${code}&sender=${sender}`)
         const json = await userRequest.json();
-        if(json.status === 400)
-        {
+        if (json.status === 400) {
             setVisibility(false)
             setState("Find another Message");
 
         }
-        else
-        {
+        else {
             setVisibility(true)
             setState("Found Message")
             setMessage(json.message)
@@ -37,7 +35,7 @@ const MessagePage = () => {
 
     return (
         <div>
-            <NavBar/>
+            <NavBar />
             <section class="py-10 bg-gray-50 sm:py-16 lg:py-24">
                 <div class="px-4 mx-auto my-20 max-w-7xl sm:px-6 lg:px-8">
                     <div class="max-w-2xl mx-auto text-center">
@@ -65,7 +63,7 @@ const MessagePage = () => {
                                             <form >
                                                 <div class="space-y-5">
                                                     <div>
-                                                        <label for="" class="text-base font-medium text-gray-900"> From </label>
+                                                        <label for="" class="text-base font-medium text-gray-900"> {sender} </label>
                                                         <div class="mt-2.5 relative text-gray-400 focus-within:text-gray-600">
                                                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                                                             </div>
@@ -115,6 +113,8 @@ const MessagePage = () => {
                 </div>
                 <div className="grid grid-cols-1 justify-items-center xl:grid-cols-1 2xl:grid-cols-1"></div>
             </section>
+
+
         </div>)
 }
 
