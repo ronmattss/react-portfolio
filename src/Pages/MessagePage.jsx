@@ -111,15 +111,35 @@ const MessagePage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 justify-items-center xl:grid-cols-1 2xl:grid-cols-1"></div>
-                <div class="overflow-hidden bg-white rounded-md shadow-md">
-                <div class="px-4 py-6 sm:px-8 sm:py-7">
-                    <div>
-                        <p className="max-w-fit my-auto text-left text-clip  flex justify-left">{message}</p>
+                <div class="px-4 mx-auto my-20 max-w-7xl sm:px-6 lg:px-8">
+                    <div class="max-w-2xl mx-auto text-center">
+                    </div>
 
+                    <div class="relative max-w-md mx-auto mt-8 md:mt-16">
+                        <div class="overflow-hidden bg-white rounded-md shadow-md">
+                            <div class="px-4 py-6 sm:px-8 sm:py-7">
+                                {
+                                    show ? (
+
+                                        <div class="overflow-hidden bg-white rounded-md shadow-md">
+                                            <div class="px-4 py-6 sm:px-8 sm:py-7">
+                                                <div>
+                                                    <p className="max-w-fit my-auto text-left text-clip  flex justify-left">{message}</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )
+                                        :
+                                        ( <div></div>
+                                        )
+                                }
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div className="grid grid-cols-1 justify-items-center xl:grid-cols-1 2xl:grid-cols-1"></div>
             </section>
 
 
