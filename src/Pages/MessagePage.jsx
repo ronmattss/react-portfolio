@@ -13,8 +13,10 @@ const MessagePage = () => {
 
     useEffect(() => {
         console.log(message);
+        console.log(code)
+        console.log(sender)
         // 
-    }, [message])
+    }, [message,code,sender])
 
     async function requestMessage() {
         setState("Finding Message")
