@@ -115,6 +115,15 @@ const MessagePage = () => {
                 </div>
                 <div className="grid grid-cols-1 justify-items-center xl:grid-cols-1 2xl:grid-cols-1"></div>
             </section>
+
+            <div class="overflow-hidden bg-white rounded-md shadow-md">
+                                            <div class="px-4 py-6 sm:px-8 sm:py-7">
+                                                <div>
+                                                    <p className="max-w-fit my-auto text-left text-clip  flex justify-left">{message}</p>
+
+                                                </div>
+                                            </div>
+                                        </div>
         </div>)
 }
 
