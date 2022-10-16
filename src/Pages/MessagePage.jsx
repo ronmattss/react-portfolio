@@ -6,7 +6,7 @@ import messages from "../data/messages.json"
 const MessagePage = () => {
 
     const [message, setMessage] = useState('');
-    const [messageTest, setMessageTest] = useState('');
+    const [messageTest, setMessageTest] = useState('Some text heare');
     const [sender, setSender] = useState('');
     const [code, setCode] = useState('');
     const [show, setVisibility] = useState(false);
