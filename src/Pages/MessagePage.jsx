@@ -12,24 +12,27 @@ const MessagePage = () => {
 
 
     useEffect(() => {
+        if (message === null) return;
         console.log(message);
+       
         // 
     }, [message])
 
     async function requestMessage() {
         setState("Finding Message")
+        console.log("Finding Message")
         const userRequest = await fetch(`https://basicmessageapi.azurewebsites.net/api/Message/byCode?code=${code}&sender=${sender}`)
         const json = await userRequest.json();
-        if(json.status === 400)
-        {
+        console.log(json.status)
+        setState(json)
+        if (json.status === 400) {
             setVisibility(false)
             setState("Find another Message");
 
         }
-        else
-        {
-            setVisibility(true)
+        else {
             setState("Found Message")
+            setVisibility(true)
             setMessage(json.message)
         }
     }
@@ -37,12 +40,12 @@ const MessagePage = () => {
 
     return (
         <div>
-            <NavBar/>
+            <NavBar />
             <section class="py-10 bg-gray-50 sm:py-16 lg:py-24">
                 <div class="px-4 mx-auto my-20 max-w-7xl sm:px-6 lg:px-8">
                     <div class="max-w-2xl mx-auto text-center">
                         <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Grad Message Portal</h2>
-                        <p class="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">Did I leave a message for you?</p>
+                        <p class="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">{message}</p>
                     </div>
 
                     <div class="relative max-w-md mx-auto mt-8 md:mt-16">
