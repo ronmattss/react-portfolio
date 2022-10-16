@@ -6,7 +6,7 @@ import messages from "../data/messages.json"
 const MessagePage = () => {
 
     const [message, setMessage] = useState('');
-    const [messageTest, setMessageTest] = useState('Some text heare');
+    const [messageTest, setMessageTest] = useState('For mobile devices, your message will appear here as my backend code is not working on mobile');
     const [sender, setSender] = useState('');
     const [code, setCode] = useState('');
     const [show, setVisibility] = useState(false);
@@ -48,6 +48,9 @@ const MessagePage = () => {
             if (messages[i].sender === sender) {
                 console.log(messages[i])
                 setMessageTest(messages[i].message);
+                setState("Found Message")
+                setVisibility(true)
+                setMessage(messages[i].message)
                 return
             }
             console.log("No test message found")
@@ -63,7 +66,7 @@ const MessagePage = () => {
                 <div class="px-4 mx-auto my-20 max-w-7xl sm:px-6 lg:px-8">
                     <div class="max-w-2xl mx-auto text-center">
                         <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Grad Message Portal</h2>
-                        <p class="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">{messageTest}</p>
+                        {show ? (<div></div>) : (<p class="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">{messageTest}</p>)}
                     </div>
 
                     <div class="relative max-w-md mx-auto mt-8 md:mt-16">
