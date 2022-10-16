@@ -45,7 +45,7 @@ const MessagePage = () => {
 
 
         for (var i = 0; i < messages.length; i++) {
-            if (messages[i].sender === sender && messages[i].code) {
+            if (messages[i].sender === sender && messages[i].code === code) {
                 console.log(messages[i])
                 setMessageTest(messages[i].message);
                 setState("Found Message")
