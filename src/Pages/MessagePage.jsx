@@ -6,7 +6,7 @@ import messages from "../data/messages.json"
 const MessagePage = () => {
 
     const [message, setMessage] = useState('');
-    const [messageTest, setMessageTest] = useState('For mobile devices, your message will appear here as my backend code is not working on mobile');
+    const [messageTest, setMessageTest] = useState('For mobile devices, the message might appear here as my backend code is not working on mobile');
     const [sender, setSender] = useState('');
     const [code, setCode] = useState('');
     const [show, setVisibility] = useState(false);
@@ -45,7 +45,7 @@ const MessagePage = () => {
 
 
         for (var i = 0; i < messages.length; i++) {
-            if (messages[i].sender === sender) {
+            if (messages[i].sender === sender && messages[i].code) {
                 console.log(messages[i])
                 setMessageTest(messages[i].message);
                 setState("Found Message")
@@ -53,6 +53,8 @@ const MessagePage = () => {
                 setMessage(messages[i].message)
                 return
             }
+            setVisibility(false)
+            setState("Find another Message");
             console.log("No test message found")
         }
 
