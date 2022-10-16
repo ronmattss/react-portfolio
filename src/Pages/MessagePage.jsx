@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import NavBar from "../components/Navbar";
+import messages from "../data/messages.json"
 
 const MessagePage = () => {
 
     const [message, setMessage] = useState('');
+    const [messageTest, setMessageTest] = useState('');
     const [sender, setSender] = useState('');
     const [code, setCode] = useState('');
     const [show, setVisibility] = useState(false);
@@ -14,12 +16,13 @@ const MessagePage = () => {
     useEffect(() => {
         if (message === null) return;
         console.log(message);
-       
+
         // 
     }, [message])
 
     async function requestMessage() {
         setState("Finding Message")
+        checkMessage();
         console.log("Finding Message")
         const userRequest = await fetch(`https://basicmessageapi.azurewebsites.net/api/Message/byCode?code=${code}&sender=${sender}`)
         const json = await userRequest.json();
@@ -38,6 +41,21 @@ const MessagePage = () => {
     }
 
 
+    function checkMessage() {
+
+
+        for (var i = 0; i < messages.length; i++) {
+            if (messages[i].sender === sender) {
+                console.log(messages[i])
+                setMessageTest(messages[i].message);
+                return
+            }
+            console.log("No test message found")
+        }
+
+    }
+
+
     return (
         <div>
             <NavBar />
@@ -45,7 +63,7 @@ const MessagePage = () => {
                 <div class="px-4 mx-auto my-20 max-w-7xl sm:px-6 lg:px-8">
                     <div class="max-w-2xl mx-auto text-center">
                         <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Grad Message Portal</h2>
-                        <p class="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">{message}</p>
+                        <p class="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">{messageTest}</p>
                     </div>
 
                     <div class="relative max-w-md mx-auto mt-8 md:mt-16">
