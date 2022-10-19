@@ -22,7 +22,7 @@ const MessagePage = () => {
 
     async function requestMessage() {
         setState("Finding Message")
-     //   checkMessage();
+        checkMessage();
         console.log("Finding Message")
         const userRequest = await fetch(`https://basicmessageapi.azurewebsites.net/api/Message/byCode?code=${code}&sender=${sender}`)
         const json = await userRequest.json();
