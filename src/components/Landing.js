@@ -17,7 +17,7 @@ const Landing = () => {
                                     >                                View All Projects
                                     </button>
 
-                                    <button onClick={() =>{window.open("/assets/Data/CV-Rivera, Ron Matthew R..pdf","")}} className="bg-custom-navy-sky text-custom-dark-secondary active:bg-teal-100 hover:bg-teal-400 hover:text-white font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                                    <button onClick={() =>{window.open("/assets/Data/Resume-Rivera, Ron Matthew R..pdf","")}} className="bg-custom-navy-sky text-custom-dark-secondary active:bg-teal-100 hover:bg-teal-400 hover:text-white font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
                                     >                                Download CV
                                     </button>
                                 </div>
