@@ -84,7 +84,7 @@ const Home = () => {
             <div ref={fields}></div>
             <div className=" grid grid-cols-1 justify-items-center xl:grid-cols-3 2xl:mx-80">
                 <Card field={"Game Development"} fieldExpertize={"I love making games, it's like a puzzle that you can actually play after you figure out how things work. I have years of experience designing and prototyping small games"} />
-                <Card field={"Software Development"} fieldExpertize={"Software development is where I started, I am exposed to .net ecosystem where I experimented on a lot of it features. I also like creating Discord bots"} />
+                <Card field={"Software Development"} fieldExpertize={"Software development is where I started, I am exposed to .net ecosystem where I experimented on a lot of its features. I also like creating Discord bots"} />
                 <Card field={"Web Development"} fieldExpertize={"Building websites is fun, I like creating React Components and handling Backend stuff using ASP.Net or NodeJS"} />
                 <Card field={"Android Development"} fieldExpertize={"I tried exploring mobile app development using Android, but Flutter is much better on creating UI components"} />
             </div>
