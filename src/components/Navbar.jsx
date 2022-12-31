@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function NavBar({ home, fields, projects,contacts }) {
+export default function NavBar({ home, fields, projects, contacts }) {
     const [navbar, setNavbar] = useState(false);
     const nameLogo = "{ronmattss}";
 
@@ -54,8 +54,8 @@ export default function NavBar({ home, fields, projects,contacts }) {
                     <div
                         className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"}`}>
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li onClick={ home} className="text-white hover:text-sky-300">
-                            <button>Home</button>
+                            <li onClick={home} className="text-white hover:text-sky-300">
+                                <button>Home</button>
                             </li>
                             <li onClick={fields} className="text-white hover:text-sky-300">
                                 <button>Projects</button>
@@ -63,7 +63,7 @@ export default function NavBar({ home, fields, projects,contacts }) {
                             <li onClick={contacts} className="text-white hover:text-sky-300">
                                 <button>Contact</button>
                             </li>
-                            <button onClick={() => { window.window.open("/assets/Data/CV-Rivera, Ron Matthew R..pdf","") }} className="bg-custom-navy-accent text-white active:bg-teal-100 hover:bg-teal-400 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                            <button onClick={() => { window.window.open("/assets/Data/CV-Rivera, Ron Matthew R..pdf", "") }} className="bg-custom-navy-accent text-white active:bg-teal-100 hover:bg-teal-400 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
                             >                                Download CV
                             </button>
                         </ul>
