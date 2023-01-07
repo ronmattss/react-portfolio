@@ -63,7 +63,7 @@ export default function NavBar({ home, fields, projects, contacts }) {
                             <li onClick={contacts} className="text-white hover:text-sky-300">
                                 <button>Contact</button>
                             </li>
-                            <button onClick={() => { window.window.open("/assets/Data/CV-Rivera, Ron Matthew R..pdf", "") }} className="bg-custom-navy-accent text-white active:bg-teal-100 hover:bg-teal-400 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                            <button onClick={() => { window.window.open("/assets/Data/Ron Resume .pdf", "") }} className="bg-custom-navy-accent text-white active:bg-teal-100 hover:bg-teal-400 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
                             >                                Download CV
                             </button>
                         </ul>
