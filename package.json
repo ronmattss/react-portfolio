@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://ronmattss.github.io",
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
