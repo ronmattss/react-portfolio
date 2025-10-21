@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Card from "../components/Card";
 import ContactForm from "../components/ContactForm";
-import Features from "../components/Features";
+import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 import Landing from "../components/Landing";
 import NavBar from "../components/Navbar";
@@ -82,7 +82,7 @@ const Home = () => {
             <Landing />
             <ShortDescription header={"What I do"} />
             <div ref={fields}></div>
-            <div className=" grid grid-cols-1 justify-items-center xl:grid-cols-3 2xl:mx-80">
+            <div id="features" className=" grid grid-cols-1 justify-items-center xl:grid-cols-3 2xl:mx-80">
                 <Card field={"Game Development"} fieldExpertize={"I love making games, it's like a puzzle that you can actually play after you figure out how things work. I have years of experience designing and prototyping small games"} />
                 <Card field={"Software Development"} fieldExpertize={"Software development is where I started, I am exposed to .net ecosystem where I experimented on a lot of its features. I also like creating Discord bots"} />
                 <Card field={"Web Development"} fieldExpertize={"Building websites is fun, I like creating React Components and handling Backend stuff using ASP.Net or NodeJS"} />
@@ -90,17 +90,8 @@ const Home = () => {
             </div>
             <div ref={project}></div>
             <ShortDescription header={"Projects I made"} />
-            <div className=" grid grid-cols-1 justify-items-center xl:grid-cols-3 2xl:mx-80">
-                {
-                    projects.map(project => (
-                        <Features
-                            key={project.key}
-                            projectTitle={project.name}
-                            projectImage={project.image}
-                            projectDescription={project.description}
-                        />
-                    ))
-                }
+            <div className="flex justify-center px-4">
+                <Projects projects={projects} />
             </div>
             {/* <div className=" grid grid-cols-1 justify-items-center xl:grid-cols-3 2xl:mx-80">
                 {

@@ -1,0 +1,61 @@
+/* Landing component styles */
+.role{
+  display: inline-block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-6px);
+}
+.role.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.role.hidden{
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.caret{
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: currentColor;
+  margin-left: 6px;
+  animation: blink 1s steps(1) infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink{
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.scroll-indicator{
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.85);
+  animation: bounce 2s infinite;
+  background: rgba(255,255,255,0.04);
+  padding: 8px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.scroll-indicator.hidden{ opacity: 0; pointer-events: none; transform: translateX(-50%) translateY(8px); transition: opacity .3s, transform .3s; }
+
+@keyframes bounce{
+  0%,100%{ transform: translateX(-50%) translateY(0); }
+  50%{ transform: translateX(-50%) translateY(8px); }
+}
+
+/* Responsive hero on small screens */
+@media (max-width: 768px) {
+  .role{ font-size: 1rem; }
+  .caret{ height: 1em; }
+  .scroll-indicator{ bottom: 18px; }
+}
+
+/* Improve contrast for headings */
+.text-custom-navy-sky{ color: #e6eef9; }
