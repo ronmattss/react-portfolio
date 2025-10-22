@@ -49,7 +49,7 @@ h3{ color: #ffffff; font-weight:700; margin-bottom:6px; }
 
 .career-item .text-gray-300, .career-item p, .career-item li{ color: #e6eef9; }
 
-.career-item ul{ margin-top:0.5rem; margin-bottom:0.75rem; padding-left:1.1rem; }
+.career-item ul{ line-height:1.25; margin-left:1rem }
 .career-item li{ margin-bottom:0.45rem; }
 
 .career-tech span{ 
@@ -111,6 +111,8 @@ h3{ color: #ffffff; font-weight:700; margin-bottom:6px; }
   margin-right: 8px;
   margin-bottom: 6px;
 }
+
+.bullet-dot{ background: var(--accent); width:8px; height:8px; border-radius:50% }
 
 @media (max-width: 768px){
   .timeline{ padding-left: 1rem; }

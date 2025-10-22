@@ -67,76 +67,74 @@ const Projects = ({ projects, title = "Projects" }) => {
     };
 
     return (
-        <section className="py-12">
-            <div className="max-w-6xl mx-auto px-4">
-                <h2 className="text-4xl font-extrabold text-center mb-8 tracking-wide text-gray-200">{title}</h2>
-                <div className="timeline">
-                    {items.map((p, idx) => (
-                        <article key={p.key ?? idx} className="career-item flex flex-col items-start cursor-pointer" onClick={(e) => toggleDetails(idx, e)}>
-                            <div className="w-full">
-                                <header className="flex items-start justify-between w-full">
-                                    <div>
-                                        {p.type && (
-                                            <div className="project-type-badge mb-2">{p.type}</div>
-                                        )}
-                                        <h3 className="text-xl md:text-2xl font-semibold text-white">{p.name}</h3>
-                                        <p className="text-sm text-gray-300">{p.short || ''}</p>
-                                    </div>
-                                    <div className="flex gap-2">
-                                        {p.link && (
-                                            <a href={p.link} target="_blank" rel="noreferrer noopener" className="text-sm px-3 py-1 rounded bg-custom-navy-accent text-white hover:opacity-90" onClick={(e)=>e.stopPropagation()} aria-label={`Open live demo for ${p.name}`}>
-                                                <FiExternalLink className="inline-block mr-2" />Live
-                                            </a>
-                                        )}
-                                        {p.repo && (
-                                            <a href={p.repo} target="_blank" rel="noreferrer noopener" className="text-sm px-3 py-1 rounded bg-custom-navy-sky text-white hover:opacity-90" onClick={(e)=>e.stopPropagation()} aria-label={`Open repository for ${p.name}`}>
-                                                <FaGithub className="inline-block mr-2" />Repo
-                                            </a>
-                                        )}
-                                        <button onClick={(e) => toggleDetails(idx, e)} className="text-sm px-3 py-1 rounded bg-custom-navy-accent text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom-navy-accent" aria-expanded={openIndex === idx} aria-controls={`project-details-${idx}`}>
-                                            {openIndex === idx ? 'Hide' : 'Details'}
-                                        </button>
-                                    </div>
-                                </header>
-
-                                <div className="mt-3 text-gray-300">
-                                    <p className="mb-3">{p.description}</p>
+        <section className="projects-section max-w-6xl mx-auto px-4 py-12">
+            <h2 className="section-title">{title === 'Personal Projects' ? 'Featured Projects' : title}</h2>
+            <div className="timeline">
+                {items.map((p, idx) => (
+                    <article key={p.key ?? idx} className="career-item flex flex-col items-start cursor-pointer" onClick={(e) => toggleDetails(idx, e)}>
+                        <div className="w-full">
+                            <header className="flex items-start justify-between w-full">
+                                <div>
+                                    {p.type && (
+                                        <div className="project-type-badge mb-2">{p.type}</div>
+                                    )}
+                                    <h3 className="text-xl md:text-2xl font-semibold text-white">{p.name}</h3>
+                                    <p className="text-sm text-gray-300">{p.short || ''}</p>
                                 </div>
-
-                                <div id={`project-details-${idx}`} ref={el => detailsRefs.current[idx] = el} className={`project-details w-full`}>
-                                    {/* Show image inside expanded details if available */}
-                                    {p.image && (
-                                        <div className="mb-3 w-full rounded overflow-hidden">
-                                            <img src={p.image} alt={p.name} className="object-cover w-full max-h-72 mx-auto" loading="lazy" />
-                                        </div>
+                                <div className="flex gap-2">
+                                    {p.link && (
+                                        <a href={p.link} target="_blank" rel="noreferrer noopener" className="text-sm px-3 py-1 rounded bg-custom-navy-accent text-white hover:opacity-90" onClick={(e)=>e.stopPropagation()} aria-label={`Open live demo for ${p.name}`}>
+                                            <FiExternalLink className="inline-block mr-2" />Live
+                                        </a>
                                     )}
-
-                                    {p.purpose && (
-                                        <div className="mb-3 text-gray-300">
-                                            <h4 className="font-semibold mb-2">Purpose</h4>
-                                            <p>{p.purpose}</p>
-                                        </div>
+                                    {p.repo && (
+                                        <a href={p.repo} target="_blank" rel="noreferrer noopener" className="text-sm px-3 py-1 rounded bg-custom-navy-sky text-white hover:opacity-90" onClick={(e)=>e.stopPropagation()} aria-label={`Open repository for ${p.name}`}>
+                                            <FaGithub className="inline-block mr-2" />Repo
+                                        </a>
                                     )}
-
-                                    {p.tech && (
-                                        <div className="flex flex-wrap gap-2 career-tech mb-3">
-                                            {p.tech.map((t, k) => (
-                                                <span key={k} className="career-tech-chip">{t}</span>
-                                            ))}
-                                        </div>
-                                    )}
-                                    {p.highlights && (
-                                        <ul className="list-disc list-inside text-gray-300 mb-3">
-                                            {p.highlights.map((h, i) => (
-                                                <li key={i}>{h}</li>
-                                            ))}
-                                        </ul>
-                                    )}
+                                    <button onClick={(e) => toggleDetails(idx, e)} className="text-sm px-3 py-1 rounded bg-custom-navy-accent text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom-navy-accent" aria-expanded={openIndex === idx} aria-controls={`project-details-${idx}`}>
+                                        {openIndex === idx ? 'Hide' : 'Details'}
+                                    </button>
                                 </div>
+                            </header>
+
+                            <div className="mt-3 text-gray-300">
+                                <p className="mb-3">{p.description}</p>
                             </div>
-                        </article>
-                    ))}
-                </div>
+
+                            <div id={`project-details-${idx}`} ref={el => detailsRefs.current[idx] = el} className={`project-details w-full`}>
+                                {/* Show image inside expanded details if available */}
+                                {p.image && (
+                                    <div className="mb-3 w-full rounded overflow-hidden">
+                                        <img src={p.image} alt={p.name} className="object-cover w-full max-h-72 mx-auto" loading="lazy" />
+                                    </div>
+                                )}
+
+                                {p.purpose && (
+                                    <div className="mb-3 text-gray-300">
+                                        <h4 className="font-semibold mb-2">Purpose</h4>
+                                        <p>{p.purpose}</p>
+                                    </div>
+                                )}
+
+                                {p.tech && (
+                                    <div className="flex flex-wrap gap-2 career-tech mb-3">
+                                        {p.tech.map((t, k) => (
+                                            <span key={k} className="career-tech-chip">{t}</span>
+                                        ))}
+                                    </div>
+                                )}
+                                {p.highlights && (
+                                    <ul className="list-disc list-inside text-gray-300 mb-3">
+                                        {p.highlights.map((h, i) => (
+                                            <li key={i}>{h}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                            </div>
+                        </div>
+                    </article>
+                ))}
             </div>
         </section>
     );

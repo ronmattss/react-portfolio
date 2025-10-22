@@ -120,10 +120,10 @@ const TriangleBackground = ({
               const cy = (a.y + n1.node.y + n2.node.y) / 3;
               const v = (Math.sin((cx/width)*Math.PI*2) + Math.cos((cy/height)*Math.PI*2))*0.5 + 0.5;
               const alpha = 0.03 + v * 0.09; // between 0.03 and 0.12
-              ctx.fillStyle = `rgba(255,139,0,${alpha})`;
+              ctx.fillStyle = `rgba(226,138,0,${Math.max(0.02, alpha * 0.7)})`;
               ctx.fill();
 
-              ctx.strokeStyle = colorStroke;
+              ctx.strokeStyle = 'rgba(2,6,23,0.14)';
               ctx.lineWidth = 0.45;
               ctx.stroke();
             }
@@ -151,7 +151,7 @@ const TriangleBackground = ({
       // pointer dot
       if (pointer.active) {
         ctx.beginPath();
-        ctx.fillStyle = 'rgba(255,255,255,0.95)';
+        ctx.fillStyle = 'rgba(255,255,255,0.92)';
         ctx.shadowColor = 'rgba(255,139,0,0.25)';
         ctx.shadowBlur = Math.max(4, glowBlur);
         ctx.arc(pointer.x, pointer.y, pointerSize, 0, Math.PI*2);

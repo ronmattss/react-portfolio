@@ -124,12 +124,15 @@ const Landing = () => {
     return (
         <div className="min-h-[60vh] md:min-h-screen flex items-center justify-center relative">
             <TriangleBackground />
-            <div className="landing-content">
+            <div className="landing-content section-padding">
                 <div className="text-center px-6 md:px-12">
-                    <h2 className="text-custom-navy-sky text-4xl lg:text-7xl lg:text-center md:w-auto leading-tight">
+                    <h2 className="text-custom-navy-sky text-4xl lg:text-7xl lg:text-center md:w-auto leading-tight font-extrabold">
                         HI, I'M RON
                     </h2>
-                    <p className="text-custom-navy-sky my-3 text-center lg:text-center text-2xl font-medium">
+                    <p className="text-custom-navy-sky my-2 text-center lg:text-center text-2xl font-semibold">
+                        Software & Game Developer focused on automation, backend systems, and Unity prototypes.
+                    </p>
+                    <p className="text-custom-navy-sky my-2 text-center lg:text-center text-xl font-medium">
                         <span className={`role ${visible ? 'visible' : 'hidden'}`}>{displayedText}<span className="caret" /></span>
                     </p>
                     <div className="landing-stats mt-4 mb-2">
