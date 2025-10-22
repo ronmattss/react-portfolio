@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Landing.css";
+import TriangleBackground from "./TriangleBackground";
+import CareerData from '../data/career.json';
+import ProjectsData from '../data/projects.json';
 
 const Landing = () => {
     const roles = [
-        " SOFTWARE DEVELOPER",
-        " FULL-STACK DEVELOPER",
-        " MOBILE APP DEVELOPER"
+        " SOFTWARE DEVELOPMENT",
+        " GAME DEVELOPMENT",
+        " UI & TEST AUTOMATION",
+        " WEB DEVELOPMENT",
+        " FULL-STACK DEVELOPMENT",
+        " MOBILE / ANDROID DEVELOPMENT",
+        " CI/CD & DEVOPS"
     ];
 
     const [currentRole, setCurrentRole] = useState(roles[0]);
@@ -57,8 +64,22 @@ const Landing = () => {
     }, []);
 
     useEffect(() => {
-        const featuresEl = document.getElementById("features");
-        if (!featuresEl) return;
+        // Observe the career section; fall back to features if career isn't present
+        const targetIds = ["career", "features"];
+        let observedEl = null;
+        for (const id of targetIds) {
+            const el = document.getElementById(id);
+            if (el) {
+                observedEl = el;
+                break;
+            }
+        }
+
+        if (!observedEl) {
+            // No target found — keep arrow visible
+            setArrowVisible(true);
+            return;
+        }
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -69,57 +90,82 @@ const Landing = () => {
             { root: null, threshold: 0.25 }
         );
 
-        observer.observe(featuresEl);
+        observer.observe(observedEl);
 
         return () => observer.disconnect();
     }, []);
 
     const handleScrollToFeatures = (e) => {
         e.preventDefault();
-        const el = document.getElementById("features");
+        const el = document.getElementById("career") || document.getElementById("features");
         if (!el) return;
         const offset = -20; // small offset from top
         const top = el.getBoundingClientRect().top + window.pageYOffset + offset;
         window.scrollTo({ top, behavior: "smooth" });
     };
 
+    // compute quick stats
+    const extractStartYear = (dates) => {
+        if (!dates) return null;
+        const match = dates.match(/(19|20)\d{2}/);
+        return match ? parseInt(match[0], 10) : null;
+    };
+
+    const yearsExperience = (() => {
+        const yearsFound = CareerData.map(c => extractStartYear(c.dates)).filter(Boolean);
+        if (!yearsFound.length) return '—';
+        const earliest = Math.min(...yearsFound);
+        const diff = new Date().getFullYear() - earliest;
+        return `${diff}+ yrs`;
+    })();
+
+    const projectsCount = Array.isArray(ProjectsData) ? ProjectsData.length : '—';
+
     return (
         <div className="min-h-[60vh] md:min-h-screen flex items-center justify-center relative">
-            <div className="text-center px-6 md:px-12">
-                <h2 className="text-custom-navy-sky text-4xl lg:text-7xl lg:text-center md:w-auto leading-tight">
-                    HI, I'M RON
-                </h2>
-                <p className="text-custom-navy-sky my-3 text-center lg:text-center text-2xl font-medium">
-                    A <span className={`role ${visible ? 'visible' : 'hidden'}`}>{displayedText}<span className="caret" /></span>
-                </p>
-                <div className="flex justify-center content-center my-1 gap-4">
-                    <button
-                        onClick={() => { window.open("https://shadedgames.azurewebsites.net/Project", ""); }}
-                        className="bg-custom-navy-accent text-white active:bg-teal-100 hover:bg-teal-400 hover:text-gray-100 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
-                        type="button"
-                    >
-                        View All Projects
-                    </button>
+            <TriangleBackground />
+            <div className="landing-content">
+                <div className="text-center px-6 md:px-12">
+                    <h2 className="text-custom-navy-sky text-4xl lg:text-7xl lg:text-center md:w-auto leading-tight">
+                        HI, I'M RON
+                    </h2>
+                    <p className="text-custom-navy-sky my-3 text-center lg:text-center text-2xl font-medium">
+                        <span className={`role ${visible ? 'visible' : 'hidden'}`}>{displayedText}<span className="caret" /></span>
+                    </p>
+                    <div className="landing-stats mt-4 mb-2">
+                        <button onClick={handleScrollToFeatures} className="stat-chip" type="button">{yearsExperience}</button>
+                        <div className="stat-chip">{projectsCount} Personal Projects</div>
+                        <div className="stat-chip">Open to opportunities</div>
+                    </div>
+                    <div className="flex justify-center content-center my-1 gap-4">
+                        <button
+                            onClick={handleScrollToFeatures}
+                            className="btn-primary text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg ease-linear transition-all duration-150"
+                            type="button"
+                        >
+                            View Experience
+                        </button>
 
-                    <button
-                        onClick={() => { window.open("/assets/Data/Ron Resume .pdf", ""); }}
-                        className="bg-custom-navy-sky text-custom-dark-secondary active:bg-teal-100 hover:bg-teal-400 hover:text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
-                        type="button"
-                    >
-                        Download CV
-                    </button>
+                        <button
+                            onClick={() => { window.open("/assets/Data/Resume - Rivera, Ron Matthew.pdf", ""); }}
+                            className="btn-secondary text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
+                            type="button"
+                        >
+                            Download CV
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <button
-                onClick={handleScrollToFeatures}
-                className={`scroll-indicator ${arrowVisible ? '' : 'hidden'}`}
-                aria-label="Scroll to features"
-            >
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 5v14M19 12l-7 7-7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-            </button>
+                <button
+                    onClick={handleScrollToFeatures}
+                    className={`scroll-indicator ${arrowVisible ? '' : 'hidden'}`}
+                    aria-label="Scroll to features"
+                >
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5v14M19 12l-7 7-7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </button>
+            </div>
         </div>
     );
 };

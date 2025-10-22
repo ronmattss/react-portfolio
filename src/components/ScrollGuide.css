@@ -1,0 +1,7 @@
+.scroll-guide{ display:flex; align-items:center; justify-content:center; margin:18px 0 }
+.guide-line{ width:4px; height:90px; background: linear-gradient(180deg, rgba(255,139,0,0.18), rgba(255,139,0,0.06)); border-radius:4px; display:flex; flex-direction:column; align-items:center; justify-content:space-around; padding:6px }
+.guide-line .marker{ width:8px; height:8px; background: rgba(255,255,255,0.06); border-radius:50% }
+.guide-chevron{ margin-left:12px; background: linear-gradient(90deg,var(--accent-2),var(--accent)); border:none; color:#081022; padding:8px 10px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer }
+.guide-chevron:hover{ transform: translateY(-3px) }
+
+@media (max-width:640px){ .guide-line{ height:64px } }

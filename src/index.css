@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Theme variables for dark + orange accents */
+:root{
+  --accent: #ff8b00; /* primary orange */
+  --accent-2: #ffb020; /* lighter orange */
+  --accent-dark: #cc6a00;
+  --bg-dark: #0b1220;
+  --bg-muted: #1f2937;
+  --text-light: #e6eef9;
+  --muted-text: #cbd5e1;
+}
+
+/* Map previously used utility class names to the new palette */
+.bg-custom-navy-accent{ background: linear-gradient(90deg,var(--accent-2),var(--accent)) !important; color: #081022 !important }
+.bg-custom-navy-sky{ background: var(--accent-dark) !important; color: var(--text-light) !important }
+.text-custom-navy-sky{ color: var(--text-light) !important }
+.text-custom-dark-secondary{ color: var(--muted-text) !important }
+.bg-custom-dark-primary{ background: var(--bg-dark) !important }
+
+/* small helpers */
+.btn-accent{ background: linear-gradient(90deg,var(--accent-2),var(--accent)); color:#081022 }
+.btn-accent-outline{ border:1px solid rgba(255,139,0,0.12); color:var(--accent-2) }

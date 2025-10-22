@@ -1,0 +1,120 @@
+/* Career component styles (dark + orange accents) */
+.timeline {
+  position: relative;
+  padding-left: 2rem; /* more space for timeline */
+}
+
+.timeline::before{
+  content: '';
+  position: absolute;
+  left: 24px; /* move line to align with larger bullets */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255,255,255,0.04);
+}
+
+.career-item{
+  position: relative;
+  padding: 1.5rem 1.25rem 1.5rem 3.25rem; /* increased padding */
+  margin-bottom: 1.25rem;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.025); /* slightly lighter */
+  line-height: 1.6; /* improved readability */
+}
+
+.career-item.featured{
+  background: linear-gradient(90deg, rgba(255,184,32,0.08), rgba(255,139,0,0.02));
+  border-left: 4px solid rgba(255,139,0,0.7);
+  box-shadow: 0 8px 20px rgba(2,6,23,0.45);
+}
+
+.career-item::before{
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 1.375rem;
+  width: 14px; /* larger bullet */
+  height: 14px;
+  background: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(255,139,0,0.06);
+}
+
+.company-logo{ width:56px; height:56px; object-fit:contain; border-radius:6px; }
+
+h3{ color: #ffffff; font-weight:700; margin-bottom:6px; }
+
+.meta{ color: #cbd5e1; font-size:0.95rem }
+
+.career-item .text-gray-300, .career-item p, .career-item li{ color: #e6eef9; }
+
+.career-item ul{ margin-top:0.5rem; margin-bottom:0.75rem; padding-left:1.1rem; }
+.career-item li{ margin-bottom:0.45rem; }
+
+.career-tech span{ 
+  background: #f1f5f9; /* light bubble */
+  color: #0b1220; /* dark text for contrast */
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+  border: 1px solid rgba(2,6,23,0.06);
+}
+
+.project-type-badge{
+  display: inline-block;
+  background: rgba(255,139,0,0.12);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.project-details{
+  max-height: 0px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/* Explicit chip class to ensure visibility */
+.career-tech-chip{
+  display: inline-block !important;
+  background: #f1f5f9 !important;
+  color: #0b1220 !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35) !important;
+  border: 1px solid rgba(2,6,23,0.06) !important;
+  margin-right: 8px !important;
+  margin-bottom: 6px !important;
+}
+
+/* Tech chip (bubble) styling - specific selectors to avoid being overridden */
+.timeline .career-tech span,
+.career-item .career-tech span,
+.project-details .career-tech span,
+.timeline .project-details .career-tech span{
+  display: inline-block;
+  background: #f1f5f9; /* light bubble */
+  color: #0b1220; /* dark text for contrast */
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+  border: 1px solid rgba(2,6,23,0.06);
+  margin-right: 8px;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 768px){
+  .timeline{ padding-left: 1rem; }
+  .timeline::before{ left: 12px; }
+  .career-item{ padding-left: 2.25rem; }
+  .company-logo{ width:48px; height:48px }
+}

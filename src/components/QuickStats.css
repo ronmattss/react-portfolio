@@ -1,0 +1,8 @@
+.quick-stats{ margin-top:8px }
+.stats-grid{ display:flex; gap:12px; justify-content:center; align-items:center }
+.stat-card{ background: transparent; padding:8px 12px; border-radius:8px; min-width:120px; text-align:center; }
+.stat-icon{ width:36px; height:36px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; background: transparent; color:var(--accent-2); font-size:16px; margin-bottom:6px }
+.stat-number{ color: #e6eef9; font-weight:700; font-size:1rem }
+.stat-label{ color: var(--muted-text); font-size:0.78rem }
+
+@media (max-width:768px){ .stats-grid{ flex-direction:column; gap:8px } .stat-card{ min-width:unset } }

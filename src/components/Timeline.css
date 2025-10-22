@@ -1,0 +1,8 @@
+.timeline-container{ position:fixed; left:20px; top:180px; display:flex; align-items:flex-start; z-index:60 }
+.timeline-line{ width:2px; height:60vh; background: linear-gradient(180deg, rgba(255,139,0,0.14), rgba(255,139,0,0.06)); border-radius:2px }
+.timeline-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:18px; margin-left:10px }
+.timeline-node{ width:14px; height:14px; display:flex; align-items:center; justify-content:center; cursor:pointer }
+.node-dot{ width:10px; height:10px; border-radius:50%; background: rgba(255,255,255,0.06); border:2px solid rgba(255,255,255,0.02) }
+.timeline-node.active .node-dot{ background: linear-gradient(90deg,var(--accent-2),var(--accent)); box-shadow: 0 6px 16px rgba(255,139,0,0.12) }
+
+@media (max-width:1000px){ .timeline-container{ display:none } }

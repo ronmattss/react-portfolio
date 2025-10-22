@@ -1,0 +1,43 @@
+[
+  {
+    "company": "QA Consultants",
+    "location": "North York, Ontario",
+    "role": "Software Development Engineer in Test (Full-time)",
+    "dates": "March 2023 – October 2025",
+    "summary": "Contributed to large-scale Guidewire migrations/upgrades, focusing on UI automation and test framework improvements.",
+    "tech": ["C#", "Selenium", "Cypress", "GT Framework", "CI/CD"],
+    "highlights": [
+      "Authored the majority of UI automation for a Guidewire migration; served as the sole UI automation engineer.",
+      "Implemented C# reflection-based enhancements to enable dynamic, data-driven test execution.",
+      "Built a reflection-based multi-dataset loader to improve test data scalability and maintainability.",
+      "Enhanced element interaction utilities for table and selector handling, improving test stability.",
+      "Created a Cypress + GT proof-of-concept to evaluate selector strategies and supported CI/CD readiness."
+    ]
+  },
+  {
+    "company": "ViscoTech International Industries",
+    "location": "Brampton Hills, Ontario",
+    "role": "Web Developer (Contract)",
+    "dates": "November 2022 – January 2023",
+    "summary": "Developed and launched a high-performing, responsive website using React and TailwindCSS.",
+    "tech": ["React", "TailwindCSS", "JavaScript", "Performance Optimization"],
+    "highlights": [
+      "Rebuilt the website with React and Tailwind; reduced load time by over 67%.",
+      "Implemented responsive design and achieved 99/92/91 scores on PageSpeed Insights.",
+      "Owned the project end-to-end from design to deployment and ongoing maintenance."
+    ]
+  },
+  {
+    "company": "Helix Software",
+    "location": "Mandaluyong City, Philippines",
+    "role": "Web Developer Intern",
+    "dates": "August 2021 – September 2021",
+    "summary": "Led intern development efforts to deliver a backend-driven web app, architecting core APIs and server components.",
+    "tech": ["Node.js", "Express", "JavaScript", "Frontend Frameworks"],
+    "highlights": [
+      "Led a team of interns to deliver a lottery webapp within three weeks.",
+      "Architected and implemented ~90% of the backend APIs, reducing development time by ~30%.",
+      "Delivered a stable, functioning app on schedule with minimal defects."
+    ]
+  }
+]

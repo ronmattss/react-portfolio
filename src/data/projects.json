@@ -1,0 +1,32 @@
+[
+  {
+    "key": 0,
+    "name": "Matrix Path",
+    "image": "/assets/img/MatrixPath.png",
+    "description": "A Procedural Path-building Puzzle game where you uncover paths to the exit, uses WFC to generate levels, and Fuzzy Logic to control how hard a level will be.",
+    "type": "Game",
+    "link": "",
+    "repo": "",
+    "purpose": "This was build for our University Thesis where the problem is trying to solve the pacing control of procedurally generated puzzle games."
+  },
+  {
+    "key": 1,
+    "name": "Spirit Guardian",
+    "image": "/assets/img/SS1.jpg",
+    "description": "Spirit Guardian is a 2D Action-Adventure prototype with the theme of aswang belief of the Philippines",
+    "type": "Game",
+    "link": "",
+    "repo": "",
+    "purpose": "Prototype to explore combat feel and animation timing for fast-paced 2D action. Currently reviving this project"
+  },
+  {
+    "key": 2,
+    "name": "Combat System",
+    "image": "/assets/img/HackSlash.png",
+    "description": "A prototype of a Melee Combat System where it can handle any type of weapon. It uses raycasting to detect hits and apply damage to the target.",
+    "type": "Prototype",
+    "link": "",
+    "repo": "",
+    "purpose": "Build a reusable melee framework to test hit detection, combos, and weapon behaviors."
+  }
+]

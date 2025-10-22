@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import "./Career.css";
 
 const Career = ({ positions }) => {
     const items = (positions && positions.length) ? positions : [
         {
-            company: "Sample Studios",
+            company: "Acme Studios",
             role: "Software Engineer",
             dates: "2021 — Present",
             summary: "Worked on building reliable web services and internal tools.",
@@ -15,24 +16,31 @@ const Career = ({ positions }) => {
         }
     ];
 
-    const [openIndex, setOpenIndex] = useState(null);
+    // Auto-open the first (most recent) item for visibility
+    const [openIndex, setOpenIndex] = useState(items.length ? 0 : null);
 
     const toggle = (i) => {
         setOpenIndex(openIndex === i ? null : i);
     };
 
     return (
-        <section className="py-12">
+        <section className="career-section py-12">
             <div className="max-w-6xl mx-auto px-6 md:px-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Professional Experience</h2>
-                <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Professional Experience</h2>
+                <div className="timeline">
                     {items.map((pos, i) => (
-                        <article key={i} className="bg-white/5 rounded-lg p-4 md:p-6 shadow-sm">
+                        <article key={i} id={`career-item-${i}`} className={`career-item ${pos.featured ? 'featured' : ''}`}>
                             <header className="flex items-start justify-between gap-4">
-                                <div>
-                                    <h3 className="text-xl md:text-2xl font-semibold">{pos.role}</h3>
-                                    <p className="text-sm text-gray-300">{pos.company} • <span className="text-gray-400">{pos.dates}</span></p>
+                                <div className="flex items-start gap-4">
+                                    {pos.logo && (
+                                        <img src={pos.logo} alt={`${pos.company} logo`} className="company-logo" />
+                                    )}
+                                    <div>
+                                        <h3 className="text-xl md:text-2xl font-semibold">{pos.role}</h3>
+                                        <p className="meta text-sm text-gray-300">{pos.company} • <span className="text-gray-400">{pos.dates}</span> • <span className="text-gray-400">{pos.location || ''}</span></p>
+                                    </div>
                                 </div>
+
                                 <div className="flex items-center gap-2">
                                     <button
                                         onClick={() => toggle(i)}
@@ -56,7 +64,7 @@ const Career = ({ positions }) => {
                                 {pos.tech && (
                                     <div className="flex flex-wrap gap-2">
                                         {pos.tech.map((t, k) => (
-                                            <span key={k} className="text-xs px-2 py-1 rounded bg-white/6">{t}</span>
+                                            <span key={k} className="career-tech-chip">{t}</span>
                                         ))}
                                     </div>
                                 )}

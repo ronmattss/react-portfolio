@@ -1,0 +1,10 @@
+[
+  { "key": "SiCsharp", "name": "C#" },
+  { "key": "SiUnity", "name": "Unity" },
+  { "key": "SiDotnet", "name": ".NET" },
+  { "key": "SiSelenium", "name": "Selenium" },
+  { "key": "SiCypress", "name": "Cypress" },
+  { "key": "SiReact", "name": "React" },
+  { "key": "SiDocker", "name": "Docker" },
+  { "key": "SiJavascript", "name": "JavaScript" }
+]

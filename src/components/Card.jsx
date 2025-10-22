@@ -5,9 +5,6 @@ import { AiOutlineDesktop } from "react-icons/ai";
 import { ImAndroid } from "react-icons/im";
 import { IconContext } from "react-icons/lib";
 
-
-
-
 const Card = ({ field, fieldExpertize }) => {
     // This will be a card that will contain the following info:
     /**
@@ -32,7 +29,7 @@ const Card = ({ field, fieldExpertize }) => {
     }
 
     return (
-        <div className="m-4 text-start bg-custom-navy-sky h-auto w-96 rounded-lg shadow-md">
+        <div className="w-full max-w-md bg-white/6 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-1">
             {/* Icon and Tech name */}
             <div className="">
                 <IconContext.Provider value={{ className: "shared-class", size: 50 }}>
